@@ -1,0 +1,16 @@
+name: discordlive
+version: '${version}'
+main: dev.luxo.discordlive.Discordlive
+folia-supported: true
+api-version: '1.12'
+commands:
+  dlReload:
+    description: "Reloads the discordlive's config."
+  startBot:
+    description: "Starts the discord bot."
+  closeBot:
+    description: "Close the discord bot."
+permissions:
+  dl.reload:
+    default: op
+
