@@ -12,10 +12,12 @@ public class listener implements Listener  {
 
     public boolean setted;
 
+    String regex = "(http|https)://\\S+|@\\w+";
+
+
     @EventHandler(priority = EventPriority.LOWEST)
     public void onChat(AsyncPlayerChatEvent event) {
         try{
-            String regex = "(http|https)://\\S+|@\\w+";
             String result = event.getMessage().replaceAll(regex, "");
             if(result.contains("@")){
             }else{
@@ -27,14 +29,11 @@ public class listener implements Listener  {
 
     }
     public String Regex(String input) {
-        String regex = "(http|https)://\\S+|@\\w+";
         String result = input.replaceAll(regex, "");
         return result;
     }
     @EventHandler(priority = EventPriority.LOWEST)
     public void onEntityDeath(PlayerDeathEvent event) {
-
-        String regex = "(http|https)://\\S+|@\\w+";
 
         String result = event.getDeathMessage().replaceAll(regex, "");
 
@@ -44,7 +43,6 @@ public class listener implements Listener  {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
-        String regex = "(http|https)://\\S+|@\\w+";
 
         String result = event.getPlayer().getName().replaceAll(regex, "");
 
@@ -53,7 +51,6 @@ public class listener implements Listener  {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerJoin(PlayerQuitEvent event) {
-        String regex = "(http|https)://\\S+|@\\w+";
 
         String result = event.getPlayer().getName().replaceAll(regex, "");
 
